@@ -32,17 +32,17 @@ class ColumnSelector extends Component {
         <div className={showHideClassName}>
             <section className="modal-main">
                 <form onSubmit={this.handleFormSubmit}>
-                {columns.map ( (c,index) => 
-                    <Checkbox
-                    label={c.label} key={c.label} value={index}
-                    handleCheckboxChange={this.toggleCheckbox}
-                    isChecked={c.show}
-                    />
-                )}
-                <button className="btn btn-default" type="submit">Save</button>
+                    <p>Select Table Columns</p>
+                    {columns.map ( (c,index) => 
+                        <Checkbox
+                            label={c.columnName} key={c.columnName} value={index}
+                            handleCheckboxChange={this.toggleCheckbox}
+                            isChecked={c.show}
+                        />
+                    )}
+                    <button className="btn btn-default" type="submit">Save</button>
                 </form>
-            <p>Select columns here</p>
-            <button onClick={handleCancel}>quit</button>
+                <button onClick={handleCancel}>cancel</button>
             </section>
         </div>
         );

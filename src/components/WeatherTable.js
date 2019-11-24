@@ -16,23 +16,14 @@ class WeatherTable extends React.Component {
       showControls: false,
       data: [], // this is actual cell data for the table
         // react-table uses Header, accessor, show.  Checkbox uses show + columnName
+        // columns are in state so table will re-render when "show" values change
       columns: [ // table "definition"
         { Header: 'City', accessor: 'city', show: true, columnName:'City'},
-        { Header: () => (
-            <div style={{ textAlign: "center" }}>Low °F</div>
-          ),
-          accessor: 'low', show: true, columnName:'Low °F',
-          Cell: row => (
-            <div style={{ textAlign: "center" }}>{row.value}</div>
-          )
+        { Header: 'Low °F', accessor: 'low', show: true, columnName:'Low °F',
+          Cell: (row) => this.centerAlign(row.value) 
         },
-        { Header: () => (
-            <div style={{ textAlign: "center" }}>High °F</div>
-          ),
-          accessor: 'high', show: true, columnName:'High °F',         
-          Cell: row => (
-            <div style={{ textAlign: "center" }}>{row.value}</div>
-          )
+        { Header: 'High °F', accessor: 'high', show: true, columnName:'High °F',         
+          Cell: row => this.centerAlign(row.value)
         },
         { Header: 'Forecast', accessor: 'forecast',  show: true, columnName:'Forecast' },
       ]
@@ -52,20 +43,20 @@ class WeatherTable extends React.Component {
     });
   }
 
+  // Table styling helpers
+  centerAlign = (label) => <div style={{ textAlign: "center" }}>{label}</div>
+
+  // modal helpers
   showControls = () => { this.setState({ showControls: true }); };
   hideControls = () => { this.setState({ showControls: false }); };
 
   onColumnsSelected(newColumns) {
-    let work = [...this.state.columns]
-    newColumns.forEach ( (c,index) => work[index].show = c.show)
-    this.setState({columns: work});
+    this.setState({columns: [...newColumns]});
     this.hideControls();
   }
 
-
   render() {
     const {showControls, data, columns} = this.state;
-    let columnSelection = columns.map( (c) => { return {label: c.columnName, show: c.show} })
 
     return (
       <React.Fragment>
@@ -79,7 +70,7 @@ class WeatherTable extends React.Component {
           />
           <ColumnSelector show={showControls} 
             handleCancel={this.hideControls} handleSave={this.onColumnsSelected}
-            columns={columnSelection}  />   
+            columns={columns}  />   
       </React.Fragment>
     );
   }
