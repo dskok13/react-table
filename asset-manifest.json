@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/reactable/static/css/main.f2817d45.chunk.css",
+    "main.js": "/reactable/static/js/main.f8c58cfd.chunk.js",
+    "main.js.map": "/reactable/static/js/main.f8c58cfd.chunk.js.map",
+    "runtime-main.js": "/reactable/static/js/runtime-main.b7a3973a.js",
+    "runtime-main.js.map": "/reactable/static/js/runtime-main.b7a3973a.js.map",
+    "static/css/2.11f871ab.chunk.css": "/reactable/static/css/2.11f871ab.chunk.css",
+    "static/js/2.fc69ced7.chunk.js": "/reactable/static/js/2.fc69ced7.chunk.js",
+    "static/js/2.fc69ced7.chunk.js.map": "/reactable/static/js/2.fc69ced7.chunk.js.map",
+    "index.html": "/reactable/index.html",
+    "precache-manifest.b580e26b50e8e079ec87794852bdc4db.js": "/reactable/precache-manifest.b580e26b50e8e079ec87794852bdc4db.js",
+    "service-worker.js": "/reactable/service-worker.js",
+    "static/css/2.11f871ab.chunk.css.map": "/reactable/static/css/2.11f871ab.chunk.css.map",
+    "static/css/main.f2817d45.chunk.css.map": "/reactable/static/css/main.f2817d45.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b7a3973a.js",
+    "static/css/2.11f871ab.chunk.css",
+    "static/js/2.fc69ced7.chunk.js",
+    "static/css/main.f2817d45.chunk.css",
+    "static/js/main.f8c58cfd.chunk.js"
+  ]
+}
