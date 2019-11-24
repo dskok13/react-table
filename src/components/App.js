@@ -1,16 +1,9 @@
 import React from 'react';
 
-import WeatherTable from './WeatherTable'
-import './App.css'
+import WeatherTable from 'components/WeatherTable'
+import 'components/App.css'
 
 function App() {
-  const data = [
-    { city: 'New York', low: '28', high: '42', forecast: 'cloudy' },
-    { city: 'Dallas', low: '38', high: '50', forecast: 'sunny' },
-    { city: 'Chicago', low: '26', high: '34', forecast: 'rain' },
-    { city: 'Seattle', low: '39', high: '44', forecast: 'cloudy' },
-    { city: 'Honolulu', low: '75', high: '82', forecast: 'partly sunny' },
-  ];
 
   return (
     <div className="App">
@@ -18,7 +11,7 @@ function App() {
         <h1>React Table Demo</h1>
       </header>
       <main className="main">
-        <WeatherTable data={data} />               
+        <WeatherTable />               
       </main>
     </div>
   );
