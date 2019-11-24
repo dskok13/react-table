@@ -25,3 +25,8 @@ Alignment (and more formatting) can be specified for a specific column in the co
 
 * Styling
 Default uses box shadow on bottom of header to help separate header from table content.  Nice look but it might be inconsistent with the rest of a website.
+
+* Sorting
+Default behavior is that columns are sortable just be clicking the column header.  Visual feeback is that the column header border (top/bottom) is highlighted depending upon if sort is asc/desc.
+Other features not tried yet: default sorting (for when table is initially loaded), custom sort methods, multi-column sort.
+
